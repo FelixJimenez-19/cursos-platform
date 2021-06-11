@@ -1,0 +1,273 @@
+.contenedor_index span {
+  display: block;
+  padding: 10px;
+  color: #666666;
+  background: #34454d;
+  color: #fff;
+}
+
+.contenedor_index form {
+  width: 100%;
+  display: flex;
+  border: solid 5px #34454d;
+}
+
+.contenedor_index .form_participante {
+  overflow-x: scroll;
+  display: flex;
+}
+
+.contenedor_index .form_participante input,
+.contenedor_index .form_participante select {
+  min-width: 200px;
+}
+
+.contenedor_index form input,
+.contenedor_index form select {
+  width: 100%;
+  padding: 5px 5px;
+  border: solid 1px #ddd;
+  color: #5f5f5f;
+}
+
+.contenedor_index form select option {
+  color: #000;
+}
+
+.contenedor_index form #imgShowHide {
+  width: 27px;
+  height: 27px;
+}
+
+.contenedor_index form input[type="file"] {
+  padding: 0;
+  position: relative;
+  max-width: 100px;
+  z-index: 1;
+}
+
+.contenedor_index form input[type="file"]:before {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: 'Foto';
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #6a6a6a;
+  z-index: ;
+}
+
+.contenedor_index form input[class="firma"]:before {
+  content: 'Firma';
+}
+
+.contenedor_index form input[type="submit"] {
+  max-width: 100px;
+  border-style: none;
+  font-size: 15px;
+  background: #3C8DBC;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.contenedor_index form input[type="submit"]:hover {
+  background: #357CA5;
+}
+
+.contenedor_index table {
+  text-align: center;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.contenedor_index .table_participante {
+  overflow-x: scroll;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contenedor_index .table_participante thead tr th,
+.contenedor_index .table_participante tbody tr td {
+  min-width: 200px;
+}
+
+.contenedor_index table thead {
+  background: #34454d;
+  color: #fff;
+}
+
+.contenedor_index table thead tr {
+  padding: 0;
+  margin: 0;
+}
+
+.contenedor_index table thead tr th {
+  cursor: pointer;
+  padding: 4px 0px;
+}
+
+.contenedor_index table thead tr th:last-child {
+  width: 160px;
+}
+
+.contenedor_index table tbody {
+  background: #e7f0fb;
+}
+
+.contenedor_index table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.contenedor_index table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.contenedor_index table tbody tr td {
+  font-size: 13px;
+}
+
+.contenedor_index table tbody tr td:last-child {
+  display: flex;
+}
+
+.contenedor_index table tbody tr td img {
+  width: 34px;
+  height: 34px;
+}
+
+.contenedor_index table tbody tr td a {
+  display: inline-flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+  width: 50%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.contenedor_index table tbody tr td a:first-child {
+  background: #1AA160;
+}
+
+.contenedor_index table tbody tr td a:first-child:hover {
+  background: #15824e;
+}
+
+.contenedor_index table tbody tr td a:last-child {
+  background: #DC4D41;
+}
+
+.contenedor_index table tbody tr td a:last-child:hover {
+  background: #ba4137;
+}
+
+.contenedor_index #datatable_wrapper {
+  background: #34454d;
+}
+
+.contenedor_index #datatable_wrapper #datatable_filter {
+  float: right;
+  display: inline;
+  color: #b3b3b3;
+}
+
+.contenedor_index #datatable_wrapper #datatable_filter input {
+  margin-right: 5px;
+}
+
+.contenedor_index #datatable_wrapper .dataTables_length {
+  display: inline;
+  color: #b3b3b3;
+}
+
+.contenedor_index #datatable_wrapper .dataTables_length select {
+  background: #34454d;
+  border-style: none;
+  outline: 0;
+  color: #fff;
+}
+
+.contenedor_index #datatable_wrapper .dataTables_paginate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor_index #datatable_wrapper .dataTables_paginate a {
+  border: none;
+  outline: 0;
+  border-style: none;
+  cursor: pointer;
+}
+
+.contenedor_index #datatable_wrapper .dataTables_info {
+  padding: 0;
+  margin-top: 20px;
+  color: #b3b3b3;
+}
+
+
+.contenedor_index .contendor_eliminar,
+.contenedor_index .contendor_modal,
+.contenedor_index .contendor_modal_aceptar {
+  /*  display: flex;*/
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.9);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.contenedor_index .contendor_eliminar .eliminar,
+.contenedor_index .contendor_modal .eliminar,
+.contenedor_index .contendor_modal_aceptar .eliminar {
+  border-radius: 5px;
+  background: #357CA5;
+  padding: 30px;
+  text-align: center;
+}
+
+.contenedor_index .contendor_eliminar .eliminar span,
+.contenedor_index .contendor_modal .eliminar span,
+.contenedor_index .contendor_modal_aceptar .eliminar span {
+  background: rgba(0, 0, 0, 0);
+  margin: 0 0 30px 0;
+  font-weight: bold;
+}
+
+.contenedor_index .contendor_eliminar .eliminar input,
+.contenedor_index .contendor_modal .eliminar input,
+.contenedor_index .contendor_modal_aceptar .eliminar input {
+  font-weight: bold;
+  width: 45%;
+  border-style: none;
+  padding: 10px;
+  margin: 0 8px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.contenedor_index .contendor_eliminar .eliminar input:nth-child(2),
+.contenedor_index .contendor_modal .eliminar input:nth-child(2),
+.contenedor_index .contendor_modal_aceptar .eliminar input:nth-child(2) {
+  background: #fff;
+}
+
+.contenedor_index .contendor_eliminar .eliminar input:nth-child(3),
+.contenedor_index .contendor_modal .eliminar input:nth-child(3),
+.contenedor_index .contendor_modal_aceptar .eliminar input:nth-child(3) {
+  background: #DD4F42;
+  color: #fff;
+}

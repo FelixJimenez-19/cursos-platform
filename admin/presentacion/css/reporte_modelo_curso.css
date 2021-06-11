@@ -1,0 +1,36 @@
+h1,h2,h3,h4,h5{
+  font-family: sans-serif;
+}
+.titulo{
+  width: 100%;
+  text-align: center;
+}
+.dependientes,
+.independientes,
+.last_column{
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+.dependientes thead tr{
+  background: #C5D9F1;
+}
+.independientes{
+  text-align: left;
+}
+.independientes tr{
+  border: solid 1px #000;
+  border-style: dotted;
+}
+.independientes tr td{
+  padding: 5px;
+}
+
+.last_column{
+  text-align: left;
+}
+.last_column tr td:nth-child(1){
+  background: #C5D9F1;
+  
+}

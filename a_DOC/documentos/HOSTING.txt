@@ -1,0 +1,11 @@
+HOSTING
+
+Usuario:
+itssucuaedu
+
+Contraseña:
+R4whZDB=gqH]
+
+
+BASE DE DATOS
+"localhost","itssucua_eco","Ists_2019","itssucua_capacitaciones"

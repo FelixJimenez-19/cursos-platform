@@ -1,0 +1,515 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background: #546e7a;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+header #check_menu_cuenta {
+  display: none;
+}
+
+header label {
+  width: 250px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+header label:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+header label img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background: #fff;
+}
+
+header label span {
+  font-family: sans-serif;
+  font-size: 15px;
+  color: #fff;
+}
+
+.menu_cuenta {
+  position: absolute;
+  top: -250px;
+  width: 300px;
+  background: #222D32;
+  transition: all 0.4s ease;
+  top: 100%;
+  right: -100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px 0 0 0;
+  z-index: 1000;
+}
+
+.menu_cuenta img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.menu_cuenta span {
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 15px;
+  margin: 10px 0 0 0;
+}
+
+.menu_cuenta a {
+  display: block;
+  text-align: center;
+  width: 100%;
+  background: #546e7a;
+  border: solid 1px #2A2A2A;
+  text-decoration: none;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 15px;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.menu_cuenta a:hover {
+  background: #3f525b;
+}
+
+header #check_menu_cuenta:checked ~ .menu_cuenta {
+  right: 0;
+}
+
+.btn_menu {
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  background: #546e7a;
+  width: 55px;
+  height: 50px;
+  z-index: 1;
+  transition: all 0.5s ease;
+  left: 230px;
+  z-index: 2000;
+}
+
+.btn_menu img {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.btn_menu img:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border-left: solid 1px rgba(0, 0, 0, 0.3);
+}
+
+#check_menu {
+  display: none;
+}
+
+#check_menu:checked ~ .btn_menu {
+  transition: all 0.5s ease;
+  left: 50px;
+}
+
+#check_menu:checked ~ .herramientas {
+  transition: all 0.5s ease;
+  width: 50px;
+}
+
+#check_menu:checked ~ .herramientas .botones {
+  overflow: inherit;
+}
+
+#check_menu:checked ~ .herramientas .encabezado span b {
+  display: none;
+}
+
+#check_menu:checked ~ .herramientas .encabezado span span {
+  display: flex;
+}
+
+#check_menu:checked ~ .herramientas .botones a span,
+#check_menu:checked ~ .herramientas .botones .desplegable label span {
+  display: none;
+}
+
+#check_menu:checked ~ .herramientas .botones a:hover span,
+#check_menu:checked ~ .herramientas .botones .desplegable label:hover span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable0:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable1:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable2:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable3:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable4:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable5:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable6:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable7:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable8:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable9:checked ~ label span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 80%;
+  top: 0%;
+  width: auto;
+  min-width: 170px;
+  height: 100%;
+  font-size: 15px;
+  background: #181F23;
+  border-radius: 0 5px 5px 0;
+  z-index: 10000;
+}
+
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable0:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable1:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable2:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable3:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable4:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable5:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable6:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable7:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable8:checked ~ label span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable9:checked ~ label span {
+  border-radius: 0 5px 0 0;
+  ;
+}
+
+#check_menu:checked ~ .herramientas .botones .desplegable .sub_botones {
+  transition: all 0s ease;
+}
+
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable0:checked ~ .sub_botones,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable1:checked ~ .sub_botones,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable2:checked ~ .sub_botones,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable3:checked ~ .sub_botones,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable4:checked ~ .sub_botones,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable5:checked ~ .sub_botones,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable6:checked ~ .sub_botones,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable7:checked ~ .sub_botones,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable8:checked ~ .sub_botones,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable9:checked ~ .sub_botones {
+  position: absolute;
+  width: 170px;
+  left: 100%;
+  border-radius: 0 0 5px 0;
+  background: #101518;
+  transition: all 0.5s ease;
+}
+
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable0:checked ~ .sub_botones a,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable1:checked ~ .sub_botones a,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable2:checked ~ .sub_botones a,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable3:checked ~ .sub_botones a,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable4:checked ~ .sub_botones a,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable5:checked ~ .sub_botones a,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable6:checked ~ .sub_botones a,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable7:checked ~ .sub_botones a,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable8:checked ~ .sub_botones a,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable9:checked ~ .sub_botones a {
+  width: 100%;
+  padding: 14px 5px 14px 10px;
+}
+
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable0:checked ~ .sub_botones a img,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable1:checked ~ .sub_botones a img,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable2:checked ~ .sub_botones a img,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable3:checked ~ .sub_botones a img,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable4:checked ~ .sub_botones a img,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable5:checked ~ .sub_botones a img,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable6:checked ~ .sub_botones a img,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable7:checked ~ .sub_botones a img,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable8:checked ~ .sub_botones a img,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable9:checked ~ .sub_botones a img {
+  margin: 0px;
+}
+
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable0:checked ~ .sub_botones a span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable1:checked ~ .sub_botones a span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable2:checked ~ .sub_botones a span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable3:checked ~ .sub_botones a span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable4:checked ~ .sub_botones a span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable5:checked ~ .sub_botones a span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable6:checked ~ .sub_botones a span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable7:checked ~ .sub_botones a span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable8:checked ~ .sub_botones a span,
+#check_menu:checked ~ .herramientas .botones .desplegable #check_btn_desplegable9:checked ~ .sub_botones a span {
+  display: block;
+  position: static;
+  background: rgba(0, 0, 0, 0.0);
+  font-size: 13px;
+}
+
+#check_menu:checked ~ .herramientas .botones a img,
+#check_menu:checked ~ .herramientas .botones .desplegable label img {
+  margin: auto;
+  transition: all 0.5s 0.2s ease;
+}
+
+.herramientas {
+  position: fixed;
+  left: 0%;
+  width: 230px;
+  height: 100%;
+  transition: all 0.5s ease;
+  background: #222D32;
+  z-index: 2000;
+}
+
+.herramientas .encabezado {}
+
+.herramientas .encabezado span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  font-family: sans-serif;
+  font-size: 20px;
+  background: #3f525b;
+}
+
+.herramientas .encabezado span span {
+  display: none;
+  color: #fff;
+}
+
+.herramientas .encabezado a {
+  text-decoration: none;
+  color: #000;
+}
+
+.herramientas .encabezado span b:first-child {
+  font-weight: normal;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.herramientas .encabezado img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  max-width: 160px;
+}
+
+.herramientas .botones {
+  display: block;
+  width: 100%;
+  height: 65%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.herramientas .botones .span_titulo {
+  cursor: default;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 14px;
+  padding: 13px 0;
+  margin: 10px 0;
+  color: #4b646f;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.herramientas .botones a,
+.herramientas .botones .desplegable label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 15px 10px 15px 10px;
+  color: #b8c7ce;
+  transition: all 0.1s ease;
+}
+
+.herramientas .botones a:hover,
+.herramientas .botones .desplegable label:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.herramientas .botones a img,
+.herramientas .botones .desplegable label img {
+  filter: invert(1);
+  width: 15px;
+  height: 15px;
+  transition: all 0.2s 1s ease;
+}
+
+.herramientas .botones a:last-child img {
+  filter: invert(0);
+  transform: scaleX(-1);
+}
+
+.herramientas .botones a span,
+.herramientas .botones .desplegable label span {
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-left: 10px;
+  width: auto;
+}
+
+.contenedor_index {
+  display: block;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 50px 0 0 230px;
+  transition: all 0.5s ease;
+}
+
+
+.contenedor_index::-webkit-scrollbar-thumb {
+  background: #222D32;
+  border-radius: 4px;
+}
+
+.contenedor_index::-webkit-scrollbar-track {
+  background: #b1c0c7;
+  border-radius: 4px;
+}
+
+.contenedor_index::-webkit-scrollbar,
+.herramientas .botones::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.contenedor_index .table_participante::-webkit-scrollbar,
+.contenedor_index .form_participante::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
+
+.herramientas .botones::-webkit-scrollbar {
+  width: 0px;
+}
+
+.herramientas .botones::-webkit-scrollbar-thumb {
+  background: red;
+}
+
+.contenedor_index .table_participante::-webkit-scrollbar-thumb,
+.contenedor_index .form_participante::-webkit-scrollbar-thumb {
+  background: #222D32;
+  border-radius: 4px;
+}
+
+#check_menu:checked ~ .contenedor_index {
+  padding: 50px 0 0 50px;
+}
+
+.herramientas .botones .desplegable label img {
+  transition: all 0.3s ease;
+}
+
+.herramientas .botones .desplegable #check_btn_desplegable0,
+.herramientas .botones .desplegable #check_btn_desplegable1,
+.herramientas .botones .desplegable #check_btn_desplegable2,
+.herramientas .botones .desplegable #check_btn_desplegable3,
+.herramientas .botones .desplegable #check_btn_desplegable4,
+.herramientas .botones .desplegable #check_btn_desplegable5,
+.herramientas .botones .desplegable #check_btn_desplegable6,
+.herramientas .botones .desplegable #check_btn_desplegable7,
+.herramientas .botones .desplegable #check_btn_desplegable8,
+.herramientas .botones .desplegable #check_btn_desplegable9 {
+  display: none;
+}
+
+.herramientas .botones .desplegable .sub_botones {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  max-height: 0;
+  position: static;
+  transition: all 0.5s ease;
+}
+
+.herramientas .botones .desplegable .sub_botones a {
+  padding: 15px 10px 15px 35px;
+}
+
+.herramientas .botones .desplegable .sub_botones img {
+  filter: invert(1);
+}
+
+.herramientas .botones .desplegable #check_btn_desplegable0:checked ~ .sub_botones,
+.herramientas .botones .desplegable #check_btn_desplegable1:checked ~ .sub_botones,
+.herramientas .botones .desplegable #check_btn_desplegable2:checked ~ .sub_botones,
+.herramientas .botones .desplegable #check_btn_desplegable3:checked ~ .sub_botones,
+.herramientas .botones .desplegable #check_btn_desplegable4:checked ~ .sub_botones,
+.herramientas .botones .desplegable #check_btn_desplegable5:checked ~ .sub_botones,
+.herramientas .botones .desplegable #check_btn_desplegable6:checked ~ .sub_botones,
+.herramientas .botones .desplegable #check_btn_desplegable7:checked ~ .sub_botones,
+.herramientas .botones .desplegable #check_btn_desplegable8:checked ~ .sub_botones,
+.herramientas .botones .desplegable #check_btn_desplegable9:checked ~ .sub_botones {
+  max-height: 500px;
+  transition: all 0.5s ease;
+}
+
+.herramientas .botones .desplegable #check_btn_desplegable0:checked ~ label,
+.herramientas .botones .desplegable #check_btn_desplegable1:checked ~ label,
+.herramientas .botones .desplegable #check_btn_desplegable2:checked ~ label,
+.herramientas .botones .desplegable #check_btn_desplegable3:checked ~ label,
+.herramientas .botones .desplegable #check_btn_desplegable4:checked ~ label,
+.herramientas .botones .desplegable #check_btn_desplegable5:checked ~ label,
+.herramientas .botones .desplegable #check_btn_desplegable6:checked ~ label,
+.herramientas .botones .desplegable #check_btn_desplegable7:checked ~ label,
+.herramientas .botones .desplegable #check_btn_desplegable8:checked ~ label,
+.herramientas .botones .desplegable #check_btn_desplegable9:checked ~ label {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.herramientas .botones .desplegable #check_btn_desplegable0:checked ~ label img,
+.herramientas .botones .desplegable #check_btn_desplegable1:checked ~ label img,
+.herramientas .botones .desplegable #check_btn_desplegable2:checked ~ label img,
+.herramientas .botones .desplegable #check_btn_desplegable3:checked ~ label img,
+.herramientas .botones .desplegable #check_btn_desplegable4:checked ~ label img,
+.herramientas .botones .desplegable #check_btn_desplegable5:checked ~ label img,
+.herramientas .botones .desplegable #check_btn_desplegable6:checked ~ label img,
+.herramientas .botones .desplegable #check_btn_desplegable7:checked ~ label img,
+.herramientas .botones .desplegable #check_btn_desplegable8:checked ~ label img,
+.herramientas .botones .desplegable #check_btn_desplegable9:checked ~ label img {
+  transform: rotate(90deg);
+}
+
+
+
+
+/*TABLES*/
+table tr td {
+  padding: 0 10px;
+}

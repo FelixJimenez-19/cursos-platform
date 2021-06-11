@@ -1,0 +1,146 @@
+*{
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body{
+  overflow: hidden;
+  margin: 0;
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/fondo_login.jpg);
+  height: 100vh;
+  position: relative;
+}
+.contenedor{
+  position: absolute;
+  top: 0;bottom: 0;left: 0;right: 0;
+  overflow: hidden;
+  margin: auto;
+  width: 100%; max-width: 420px;
+  height: 100%; max-height: 500px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 5px;
+}
+.contenedor .botones_login{
+  display: flex;
+}
+.contenedor .botones_login input{
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  width: 50%;
+  padding: 10px;
+  border-style: none;
+  outline: 0;
+  transition: all 0.3s ease;
+  text-shadow: 0px 2px 2px #000,
+               0px -2px 2px #000,
+               2px 0px 2px #000,
+               -2px 0px 2px #000;
+  z-index: 100;
+}
+.contenedor .botones_login input:first-child{
+  border-right: solid 1px #ddd;
+}
+.contenedor .botones_login input:hover{
+  cursor: pointer;
+  background: #222222;
+}
+.contenedor .logins{
+  width: 200%;
+  display: flex;
+  transition: all 0.5s ease;
+}
+.contenedor .logins form{
+  padding: 10px 30px 0 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.contenedor .logins form img{
+  margin: auto;
+  height: 210px;
+  display: flex;
+  margin-top: -20px;
+  z-index: 50;
+}
+.contenedor .logins form h3{
+  margin: -20px 0 15px 0;
+  text-align: center;
+  text-shadow: 0px 2px 2px #000,
+               0px -2px 2px #000,
+               2px 0px 2px #000,
+               -2px 0px 2px #000;
+  z-index: 100;
+}
+.contenedor .logins form input{
+  text-align: center;
+  width: 100%; max-width: 300px;
+  padding: 8px;
+  margin: auto;
+  border-radius: 2px;
+  border-style: none;
+}
+.contenedor .logins form input:nth-child(4){
+  margin-bottom: 10px;
+}
+.contenedor .logins form input[type="submit"]{
+  margin: 15px auto;
+  background: #222222;
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+.contenedor .logins form input[type="submit"]:hover{
+  background: #000;
+  cursor: pointer;
+}
+.contenedor .logins form span{
+  margin: auto;
+  width: 100%; max-width: 300px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-shadow: 0px 2px 2px #000,
+               0px -2px 2px #000,
+               2px 0px 2px #000,
+               -2px 0px 2px #000;
+}
+.contenedor .logins form span img{
+  margin: 0 5px 0 0;
+  padding: 1px 0;
+  width: 30px;
+  height: 30px;
+  margin: 3px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 5px;
+  filter: brightness(6);
+}
+.contenedor .logins form span:nth-child(5) img{
+  padding: 0 0 4px 0;
+}
+.contenedor a{
+  height: 40px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #000;
+  transition: all 0.3s ease;
+  background: rgba(0,0,0,0.2);
+  text-shadow: 0px 1px 0px #000,
+               0px -1px 0px #000,
+               1px 0px 0px #000,
+               -1px 0px 0px #000;
+}
+.contenedor a:hover{
+  background: #222222;
+  color: #fff;
+  padding-right: 200px;
+}
+.contenedor a img{
+  width: 30px;
+  transition: all 0.3s ease;
+}
+.contenedor a:hover img{
+  filter: invert(1);
+}

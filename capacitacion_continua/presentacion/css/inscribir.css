@@ -1,0 +1,482 @@
+* {
+  --primary: #303F9F;
+  --light-primary: #BBDEFB;
+  --white: #f2f2f2;
+  --divider: #B6B6B6;
+  --error: #D32F2F;
+
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border-style: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-formulario {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.contenedor-formulario .col {
+  width: 50%;
+}
+
+.contenedor-formulario .col form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  padding: 10px 40px;
+}
+
+.contenedor-formulario .col form .fil,
+.contenedor-formulario .col form .radio {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 50px;
+}
+
+.contenedor-formulario .col form .fil label {
+  position: absolute;
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100px;
+  height: 100%;
+  padding: 0 10px 0 0;
+  top: 0;
+  left: 0;
+  background: var(--primary);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.contenedor-formulario .col form .fil textarea,
+.contenedor-formulario .col form .fil input[type="email"],
+.contenedor-formulario .col form .fil input[type="text"] {
+  width: 100%;
+  height: 100%;
+  padding: 8px 5px 8px 110px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid #83879f;
+  background: none;
+}
+
+.contenedor-formulario .col form .fil textarea:focus,
+.contenedor-formulario .col form .fil input[type="email"]:focus,
+.contenedor-formulario .col form .fil input[type="text"]:focus {
+  padding: 8px 5px 8px 5px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.contenedor-formulario .col form .fil textarea:focus ~ label,
+.contenedor-formulario .col form .fil input[type="email"]:focus ~ label,
+.contenedor-formulario .col form .fil input[type="text"]:focus ~ label {
+  top: -90%;
+  background: rgba(0, 0, 0, 0);
+  color: #656565;
+}
+
+.contenedor-formulario .col form .fil textarea:hover,
+.contenedor-formulario .col form .fil input[type="email"]:hover,
+.contenedor-formulario .col form .fil input[type="text"]:hover {
+  padding: 8px 5px 8px 5px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.contenedor-formulario .col form .fil textarea:hover ~ label,
+.contenedor-formulario .col form .fil input[type="email"]:hover ~ label,
+.contenedor-formulario .col form .fil input[type="text"]:hover ~ label {
+  top: -90%;
+  background: rgba(0, 0, 0, 0);
+  color: #656565;
+}
+
+.contenedor-formulario .col form .fil textarea {
+  max-height: 80px;
+}
+
+.contenedor-formulario .col form .fil input[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.contenedor-formulario .col form .fil input[type="submit"]:hover {
+  background: #1b245a;
+}
+
+
+.contenedor-formulario .col form .radio {
+  flex-wrap: wrap;
+  height: 90px;
+}
+
+.contenedor-formulario .col form .radio input[type="checkbox"],
+.contenedor-formulario .col form .radio input[type="radio"] {
+  display: none;
+}
+
+.contenedor-formulario .col form .radio label {
+  position: static;
+  height: 35px;
+  margin: 5px 0;
+}
+
+.contenedor-formulario .col form .radio .opciones {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.contenedor-formulario .col form .radio .opciones .label {
+  height: 35px;
+  position: relative;
+  width: auto;
+  min-width: 100px;
+  padding: 5px 10px;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0);
+  color: var(--primary);
+  display: flex;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contenedor-formulario .col form .radio .opciones .label:hover {
+  background: rgba(48, 63, 159, 0.32);
+}
+
+.contenedor-formulario .col form .radio .opciones input[type="radio"]:checked + .label,
+.contenedor-formulario .col form .radio .opciones input[type="checkbox"]:checked + .label {
+  background: #1f275a;
+  color: #fff;
+  justify-content: center;
+}
+
+.contenedor-formulario .col form .radio .opciones input[type="radio"]:checked + .label:before,
+.contenedor-formulario .col form .radio .opciones input[type="checkbox"]:checked + .label:before {
+  width: 0px;
+  height: 0px;
+  border: solid 0px;
+}
+
+.contenedor-formulario .col form .radio .opciones .label:before {
+  content: '';
+  margin: 0 5px 0 0;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.contenedor-formulario .col form .radio .opciones .check {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.contenedor-formulario .col form .radio .opciones .check:before {
+  border-radius: 5px;
+}
+
+
+h3 {
+  text-align: center;
+  width: 100%;
+  margin: 60px 0 0 0;
+  color: var(--primary);
+  font-size: 20px;
+}
+
+
+
+
+
+
+.contenedor-formulario .col form::-webkit-scrollbar {
+  width: 7px;
+  height: 8px;
+}
+
+.contenedor-formulario .col form::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.contenedor-formulario .col form::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+
+.contenedor-formulario::-webkit-scrollbar {
+  width: 7px;
+  height: 8px;
+}
+
+.contenedor-formulario::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.contenedor-formulario::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+
+
+
+
+
+.contenedor-formulario .col:nth-child(1) {
+  height: 100%;
+  background: #21292d;
+  padding: 20px;
+}
+
+.contenedor-formulario .col .fil {
+  margin-top: 10px;
+}
+
+.contenedor-formulario .col .fil:nth-child(1) {
+  height: 60%;
+}
+
+.contenedor-formulario .col .fil img {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  max-height: 500px;
+  margin: auto;
+  display: block;
+  filter: brightness(0.5);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.contenedor-formulario .col .fil img:hover {
+  filter: brightness(0.9);
+}
+
+.contenedor-formulario .col .fil h2 {
+  text-align: center;
+  color: var(--primary);
+  font-size: 20px;
+}
+
+.contenedor-formulario .col .fil span {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  height: 30px;
+  margin: auto;
+  color: #fff;
+  font-size: 15px;
+}
+
+.contenedor-formulario .col .fil span b {
+  font-size: 18px;
+  color: var(--primary);
+  margin: 0 10px;
+}
+
+
+/*MODAL PROGRESS | CONFIRM / INICIO*/
+#content_modal_msg {
+  z-index: 10000000000;
+}
+
+/*
+#content_modal_confirm_email {
+  display: flex !important;
+}
+*/
+
+#content_modal_confirm_email .modal_confirm_email {
+  padding: 1px 10px !important;
+  width: 100% !important;
+  max-width: 500px !important;
+  height: 100% !important;
+  max-height: 170px !important;
+}
+
+#content_modal_confirm_email .modal_confirm_email input {
+  display: flex;
+  width: 100%;
+  max-width: 250px;
+  padding: 8px;
+  margin: 0 0 15px 0 !important;
+}
+
+
+#content_modal_msg,
+#content_modal_confirm_email,
+.content_modal_progress,
+.content_modal_confirm,
+#content_modal_matriculado {
+  /*  display: flex; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#content_modal_msg .modal_msg,
+#content_modal_confirm_email .modal_confirm_email,
+.content_modal_progress .modal_progress,
+.content_modal_confirm .modal_confirm,
+#content_modal_matriculado .modal_matriculado {
+  border-radius: 5px;
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  max-height: 140px;
+  background: #21292d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#content_modal_msg .modal_msg .botones,
+#content_modal_confirm_email .modal_confirm_email .botones,
+.content_modal_confirm .modal_confirm .botones,
+#content_modal_matriculado .modal_matriculado .botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  max-height: 30px;
+}
+
+#content_modal_msg .modal_msg .botones button,
+#content_modal_confirm_email .modal_confirm_email .botones button,
+.content_modal_confirm .modal_confirm .botones button,
+#content_modal_matriculado .modal_matriculado .botones button {
+  width: 50%;
+  height: 100%;
+  margin: 10px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#content_modal_msg .modal_msg .botones button,
+#content_modal_confirm_email .modal_confirm_email .botones button:first-child,
+.content_modal_confirm .modal_confirm .botones button:first-child {
+  background: #0082CF;
+}
+
+#content_modal_msg .modal_msg .botones button:hover,
+#content_modal_confirm_email .modal_confirm_email .botones button:first-child:hover,
+.content_modal_confirm .modal_confirm .botones button:first-child:hover {
+  background: #005282;
+}
+
+#content_modal_confirm_email .modal_confirm_email .botones button:last-child,
+.content_modal_confirm .modal_confirm .botones button:last-child {
+  background: #DD5246;
+}
+
+#content_modal_confirm_email .modal_confirm_email .botones button:last-child:hover,
+.content_modal_confirm .modal_confirm .botones button:last-child:hover {
+  background: #ab4036;
+}
+
+.content_modal_progress .modal_progress .progress_bar {
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  max-height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background: repeating-linear-gradient(45deg,
+      #303F9F 0px,
+      #303F9F 20px,
+      #1c255e 20px,
+      #1c255e 40px) 0 / 200%;
+  animation: progress 5s linear infinite;
+}
+
+@keyframes progress {
+  to {
+    background-position: 100% 0;
+  }
+}
+
+#content_modal_msg .modal_msg span,
+#content_modal_confirm_email .modal_confirm_email span,
+.content_modal_confirm .modal_confirm span,
+.content_modal_progress .modal_progress span,
+#content_modal_matriculado .modal_matriculado span {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  margin: 15px 0 15px 0;
+}
+
+/*MODAL PROGRESS | CONFIRM / FIN*/
+
+
+
+@media (max-width:800px) {
+  .contenedor-formulario {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    width: 100%;
+  }
+
+  .contenedor-formulario .col:nth-child(1) {
+    height: auto;
+  }
+
+  .contenedor-formulario .col {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  .contenedor-formulario .col form {
+    overflow-y: hidden;
+    height: auto;
+    max-height: none;
+  }
+}

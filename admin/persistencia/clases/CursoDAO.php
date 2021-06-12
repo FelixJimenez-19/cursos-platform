@@ -1,23 +1,61 @@
 <?php
-class CursoDAO{
-  private $conn;
-  public function __construct(){
-    $this->conn = new Mysql();
-  }
-  public function guardar($nombre, $fecha_inicio, $fecha_fin, $numero_cupos, $link_whatsapp, $id_modelo_curso){
-    $this->conn->query("INSERT INTO curso SET nombre='$nombre', fecha_inicio='$fecha_inicio', fecha_fin='$fecha_fin', numero_cupos='$numero_cupos', link_whatsapp='$link_whatsapp', id_modelo_curso=$id_modelo_curso");
-  }
-  public function editar($nombre, $fecha_inicio, $fecha_fin, $numero_cupos, $link_whatsapp, $id_modelo_curso, $id){
-    $this->conn->query("UPDATE curso SET nombre='$nombre', fecha_inicio='$fecha_inicio', fecha_fin='$fecha_fin', numero_cupos='$numero_cupos', link_whatsapp='$link_whatsapp', id_modelo_curso=$id_modelo_curso WHERE id_curso=$id");
-  }
-  public function editarFoto($foto,$id){
-    $this->conn->query("UPDATE curso SET foto='$foto' WHERE id_curso=$id");
-  }
-  public function eliminar($id){
-    $this->conn->query("DELETE FROM curso WHERE id_curso=$id");
-  }
-  public function consultar(){
-    return $this->conn->query("
+class CursoDAO
+{
+    private $conn;
+    public function __construct()
+    {
+        $this->conn = new Mysql();
+    }
+    public function guardar(
+        $nombre,
+        $fecha_inicio,
+        $fecha_fin,
+        $numero_cupos,
+        $link_whatsapp,
+        $id_modelo_curso,
+        $certificado_plantilla
+    ) {
+        $this->conn->query("INSERT INTO curso SET 
+            nombre='$nombre', 
+            fecha_inicio='$fecha_inicio', 
+            fecha_fin='$fecha_fin', 
+            numero_cupos='$numero_cupos', 
+            link_whatsapp='$link_whatsapp', 
+            id_modelo_curso=$id_modelo_curso,
+            certificado_plantilla='$certificado_plantilla'
+        ");
+    }
+    public function editar(
+        $nombre,
+        $fecha_inicio,
+        $fecha_fin,
+        $numero_cupos,
+        $link_whatsapp,
+        $id_modelo_curso,
+        $certificado_plantilla,
+        $id
+    ) {
+        $this->conn->query("UPDATE curso SET 
+            nombre='$nombre', 
+            fecha_inicio='$fecha_inicio', 
+            fecha_fin='$fecha_fin', 
+            numero_cupos='$numero_cupos', 
+            link_whatsapp='$link_whatsapp', 
+            id_modelo_curso=$id_modelo_curso,
+            certificado_plantilla='$certificado_plantilla' 
+        WHERE id_curso=$id");
+    }
+    public function editarFoto($foto, $id)
+    {
+        $this->conn->query("UPDATE curso SET foto='$foto' WHERE id_curso=$id");
+    }
+    public function eliminar($id)
+    {
+        $this->conn->query("DELETE FROM curso WHERE id_curso=$id");
+    }
+    public function consultar()
+    {
+        return $this->conn->query("
       SELECT   
         curso.id_curso AS curso_id,
         curso.nombre AS curso_nombre,
@@ -25,6 +63,7 @@ class CursoDAO{
         curso.fecha_fin AS curso_fecha_fin,
         curso.numero_cupos AS curso_numero_cupos,
         curso.link_whatsapp AS curso_link_whatsapp, 
+        curso.certificado_plantilla AS curso_certificado_plantilla, 
         curso.foto AS curso_foto,
 
         modelo_curso.id_modelo_curso AS modelo_curso_id,
@@ -63,9 +102,10 @@ class CursoDAO{
       LEFT JOIN profesor ON modelo_curso.id_profesor=profesor.id_profesor
       ORDER BY curso.fecha_inicio ASC
     ");
-  }
-  public function findFoto($nombre, $fecha_inicio, $fecha_fin, $numero_cupos, $id_modelo_curso){
-    return $this->conn->query("
+    }
+    public function findFoto($nombre, $fecha_inicio, $fecha_fin, $numero_cupos, $id_modelo_curso)
+    {
+        return $this->conn->query("
       SELECT   
         curso.id_curso AS curso_id,
         curso.nombre AS curso_nombre,
@@ -115,9 +155,10 @@ class CursoDAO{
       curso.id_modelo_curso='$id_modelo_curso' 
       ORDER BY curso.fecha_inicio ASC
   ");
-  }
-  public function findById($id){
-    return $this->conn->query("
+    }
+    public function findById($id)
+    {
+        return $this->conn->query("
       SELECT   
         curso.id_curso AS curso_id,
         curso.nombre AS curso_nombre,
@@ -125,6 +166,7 @@ class CursoDAO{
         curso.fecha_fin AS curso_fecha_fin,
         curso.numero_cupos AS curso_numero_cupos,
         curso.link_whatsapp AS curso_link_whatsapp, 
+        curso.certificado_plantilla AS curso_certificado_plantilla, 
         curso.foto AS curso_foto,
 
         modelo_curso.id_modelo_curso AS modelo_curso_id,
@@ -171,9 +213,10 @@ class CursoDAO{
       WHERE curso.id_curso=$id
       ORDER BY curso.fecha_inicio ASC
     ");
-  }
-  public function consultarByProfesor($id_profesor){
-    return $this->conn->query("
+    }
+    public function consultarByProfesor($id_profesor)
+    {
+        return $this->conn->query("
       SELECT 
         curso.id_curso AS curso_id, 
         curso.nombre AS curso_nombre, 
@@ -220,6 +263,5 @@ class CursoDAO{
       WHERE modelo_curso.id_profesor=$id_profesor
       ORDER BY curso.fecha_inicio ASC
     ");
-  }
+    }
 }
-?>

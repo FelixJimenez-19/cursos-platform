@@ -5,25 +5,122 @@
 body {
     width: 110%;
     height: 100vh;
-    background: url(img/1_fondo.png);
+    background: url(img/2_fondo.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
+}
+
+.pb-5 {
+    padding-bottom: 5px;
 }
 
 p {
     color: #77777A;
     font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.center {
     text-align: center;
-    padding: 0 100px;
 }
 
-br {
-    margin: 0px;
-    padding: 0px;
+.left {
+    text-align: left;
 }
 
-table {
+/* TITTLE */
+.tittle {
+    font-size: 25px;
+    font-family: gotham-medium;
+}
+
+/* LOGO */
+.logo {
+    margin-top: 5px;
+}
+
+.logo img {
+    height: 90px;
+}
+
+/* CERTIFICA */
+.certifica {
+    font-family: Gotham-Book;
+    margin-top: 58px;
+    margin-bottom: 10px;
+}
+
+.certifica .t1 {
+    font-size: 30px;
+}
+
+.certifica .t2 {
+    font-size: 20px;
+}
+
+/* PARTICIPANTE */
+.participante {
+    font-family: gotham-bold;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+/* DESCRIPCION */
+.descripcion {
+    font-size: 20px;
     width: 100%;
-    text-align: center;
-    padding: 0 80px;
+    padding: 0 240px;
+}
+
+.descripcion .l {
+    font-family: gotham-light;
+}
+
+.descripcion .m {
+    font-family: gotham-medium;
+}
+
+/* FIRMAS */
+.firma {
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 95px;
+    padding-right: 70px;
+}
+
+.firma td {
+    width: 310px;
+}
+
+.col {
+    color: #77777A;
+    vertical-align: top;
+}
+
+/*  FECHA */
+.date {
+    font-family: gotham-bold;
+    font-size: 20px;
+    margin-top: 75px;
+    margin-left: 60px;
+}
+
+
+/* SELLOS */
+.sello {
+    position: absolute;
+    bottom: 110px;
+}
+
+.sello.sello1 {
+    left: 305px;
+}
+
+.sello.sello2 {
+    left: 605px;
+}
+
+.sello.sello3 {
+    right: 50px;
 }

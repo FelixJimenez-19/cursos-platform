@@ -17,7 +17,7 @@ if(isset($_GET['id'])){
   $fecha_fin = getSpanishDate(explode(' ', $r['certificado_fecha_curso'])[1], 1);
   $mpdf = new \Mpdf\Mpdf(['en-GB-x','A4','','',0,0,0,0,0,0]);
   $html = '
-      <link rel="stylesheet" href="../css/reporte_certificado.css">
+      <link rel="stylesheet" href="1.css">
       <meta charset="UTF-8">
       <br><br><br><br>
       <p style="color: #77777A;">

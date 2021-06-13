@@ -35,8 +35,10 @@ if (isset($index)) {
             <option value="">Plantilla Certificado</option>
             <?php
             $print = array();
-            $dir = opendir('certificados/');
+            $path = 'certificados/';
+            $dir = opendir($path);
             while ($elemento = readdir($dir)) {
+                $tmp[] = $path . $elemento;
                 if (!is_dir($path . $elemento) and $elemento != "." and $elemento != "..") {
                     $value = explode("_", explode(".", $elemento)[0])[0];
                     $exist = false;

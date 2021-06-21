@@ -165,9 +165,9 @@ function getHTML($r, $r_c)
         </div>
 
         <p class="date letf">
-            <i style="font-size:18px;"><?= $r['certificado_ciudad_institucion'] ?>, <?= getSpanishDate($r['certificado_lugar_fecha_emision'], 2) ?>.</i><br>
-            <span style="font-size:13px;">Registro SENESCYT No</span><br>
-            <span style="font-size:13px;"><?= $r['certificado_codigo'] ?></span>
+            <i style="font-size:15px;"><?= $r['certificado_ciudad_institucion'] ?>, <?= getSpanishDate($r['certificado_lugar_fecha_emision'], 2) ?>.</i><br>
+            <span style="font-size:12px;">Registro SENESCYT No</span><br>
+            <span style="font-size:12px;"><?= $r['certificado_codigo'] ?></span>
         </p>
     </body>
 
